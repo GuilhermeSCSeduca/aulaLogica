@@ -1,0 +1,25 @@
+}<!-- Arquivo Movimentando NaveTeclado.html -->
+<!DOCTYPE html> <head>
+    <title>Movimentos com Teclado</title>
+    <script src="gamesWeb.js"></script>
+    </head> <body>
+    <canvas id="canv" width="800" height="700"></canvas>
+    Este browser não suporta o objeto canvas do HTML5,
+    </canvas>
+    <script>
+    canvas = document.getElementById("canv");
+    ctx = canvas.getContext("2d");
+    nave = new Image();
+    nave.src = "../img/inimigo1.jpg";
+    x = 400 - nave.width/2;
+    nave.onload = function() {
+    ctx.drawImage(nave, x, 700-160);
+    }
+    // Função no arquivo gamesWeb.js
+function movimentaNaveMouse(col, lin) {
+    ctx.clearRect(col-50, 700-160, 260, 160);
+    ctx.drawImage(nave, col, 700-160);
+};
+    </script>
+    </body>
+    </html>
